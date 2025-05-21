@@ -66,7 +66,7 @@ def delete_user(user_id: int):
     return database.pop(user_id - 1)
 
 
-@app.get('/users/{user_id}', response_model=UserList)
+@app.get('/users/{user_id}', response_model=UserPublic)
 def read_user_by_id(user_id: int):
     if user_id > len(database) or user_id < 1:
         raise HTTPException(
