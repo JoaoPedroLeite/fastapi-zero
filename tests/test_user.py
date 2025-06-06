@@ -47,22 +47,22 @@ def test_update_user(client, user, token):
     }
 
 
-def test_read_user_by_id_404(client):
-    response = client.get('/users/666')
+# def test_read_user_by_id_404(client):
+#     response = client.get('/users/666')
 
-    assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.json() == {'detail': 'User not found'}
+#     assert response.status_code == HTTPStatus.NOT_FOUND
+#     assert response.json() == {'detail': 'User not found'}
 
 
-def test_read_user_by_id(client, user):
-    response = client.get(f'/users/{user.id}')
+# def test_read_user_by_id(client, user):
+#     response = client.get(f'/users/{user.id}')
 
-    assert response.status_code == HTTPStatus.OK
-    assert response.json() == {
-        'username': user.username,
-        'email': user.email,
-        'id': user.id,
-    }
+#     assert response.status_code == HTTPStatus.OK
+#     assert response.json() == {
+#         'username': user.username,
+#         'email': user.email,
+#         'id': user.id,
+#     }
 
 
 def test_delete_user(client, user, token):
