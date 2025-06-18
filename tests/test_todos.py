@@ -220,4 +220,3 @@ async def test_list_todos_should_return_all_expected_fields__exercicio(
             'title': todo.title,
         }
     ]
-
