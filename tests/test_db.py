@@ -26,21 +26,3 @@ async def test_create_user(session: AsyncSession, mock_db_time):
         'updated_at': time,
         'todos': [],
     }
-
-
-# TESTE DANDO ERRO APOS MUDANÇA DE DB PARA POSTGRES
-
-# @pytest.mark.asyncio
-# async def test_create_todo_error(session, user: User):
-#     todo = Todo(
-#         title='Test Todo',
-#         description='Test Desc',
-#         state='test',
-#         user_id=user.id,
-#     )
-
-#     session.add(todo)
-#     await session.commit()
-
-#     with pytest.raises(LookupError):
-#         await session.scalar(select(Todo))
